@@ -146,13 +146,6 @@ Vue.use(D2pUploader, {
   }
 })
 
-// //  自定义字段类型示例
-// d2CrudPlus.util.columnResolve.addTypes({
-//   time2: {
-//     form: { component: { name: 'el-date-picker', props: { type: 'datetime' } } }, // 编辑时支持日期时间
-//     search: { component: { props: { type: 'date' } } }, // 搜索时只支持日期
-//     formatter (row, column, value, index) {
-//       return value + '-->我是自定义字段类型：time2'
-//     }
-//   }
-// })
+// 修改官方字段类型
+const selectType = d2CrudPlus.util.columnResolve.getType('select')
+selectType.component.props.color = 'auto' // 修改官方的字段类型，设置为支持自动染色
