@@ -30,7 +30,7 @@ export const crudOptions = (vm) => {
         },
         type: 'select',
         dict: {
-          data: [{ value: '1', label: '开启' }, { value: '0', label: '关闭' }, { value: '2', label: '停止' }]
+          data: [{ value: '1', label: '开启', color: 'success' }, { value: '0', label: '关闭', color: 'danger' }, { value: '2', label: '停止', color: 'info' }]
         }
       },
       {
@@ -55,8 +55,8 @@ export const crudOptions = (vm) => {
         },
         dict: {
           data: [{ value: 'sz', label: '深圳' }, { value: 'gz', label: '广州' }, { value: 'wh', label: '武汉' }, { value: 'sh', label: '上海' }]
-        },
-        component: { props: { color: 'auto' } } // 自动染色
+        }
+        // component: { props: { color: 'auto' } } // install.js 有配置自动染色
       }
     ]
   }
