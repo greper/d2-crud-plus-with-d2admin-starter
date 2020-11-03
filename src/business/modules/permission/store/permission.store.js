@@ -168,14 +168,13 @@ const actions = {
       if (rootState.d2admin.menu.asideSet == null) {
         let menuDefault = process.env.VUE_APP_D2P_MENU_DEFAULT
         if (menuDefault == null) {
-          menuDefault = 1
+          console.warn('默认左侧菜单未配置：VUE_APP_D2P_MENU_DEFAULT=', process.env.VUE_APP_D2P_MENU_DEFAULT)
+          menuDefault = menuHeader.length - 1
         }
         const defaultMenuIndex = parseInt(menuDefault)
         if (defaultMenuIndex >= 0) {
-          console.log('加载默认左侧菜单：VUE_APP_D2P_MENU_DEFAULT=', defaultMenuIndex)
+          console.log('加载左侧菜单：第', defaultMenuIndex, '个')
           commit('d2admin/menu/asideSet', menuHeader[defaultMenuIndex].children, { root: true })
-        } else {
-          console.warn('默认左侧菜单未配置：VUE_APP_D2P_MENU_DEFAULT=', process.env.VUE_APP_D2P_MENU_DEFAULT)
         }
       }
       // 重新初始化菜单搜索功能
