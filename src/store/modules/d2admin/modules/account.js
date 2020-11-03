@@ -46,6 +46,10 @@ export default {
         util.cookies.remove('uuid')
         // 清空 vuex 用户信息
         await dispatch('d2admin/user/set', {}, { root: true })
+
+        // 注销登录时清空permission信息，↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓增加这一行↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+        commit('permission/clear', true, { root: true })
+
         // 跳转路由
         router.push({ name: 'login' })
       }
