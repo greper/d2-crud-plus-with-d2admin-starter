@@ -13,7 +13,7 @@ import { menuHeader, menuAside } from '@/menu'
 import { frameInRoutes } from '@/router/routes'
 
 // d2-crud-plus 安装与初始化
-import './business'
+import './install'
 
 // 核心插件
 Vue.use(d2Admin)
