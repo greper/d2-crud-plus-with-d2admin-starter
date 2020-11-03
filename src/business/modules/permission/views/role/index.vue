@@ -1,12 +1,6 @@
 <template>
     <d2-container :class="{'page-compact':crud.pageOptions.compact}">
         <template slot="header">角色管理
-          <example-helper title="权限管理帮助" >
-            <div>
-              <h3>如何启用权限管理，请点击下面帮助链接</h3>
-              <link-button href="http://greper.gitee.io/d2-crud-plus/guide/permission.html">权限管理帮助文档</link-button>
-            </div>
-          </example-helper>
         </template>
         <d2-crud-x
                 ref="d2Crud"

@@ -166,7 +166,11 @@ const actions = {
       commit('d2admin/menu/headerSet', menuHeader, { root: true })
       // 重新设置侧边栏菜单
       if (rootState.d2admin.menu.asideSet == null) {
-        const defaultMenuIndex = parseInt(process.env.VUE_APP_D2P_MENU_DEFAULT)
+        let menuDefault = process.env.VUE_APP_D2P_MENU_DEFAULT
+        if (menuDefault == null) {
+          menuDefault = 1
+        }
+        const defaultMenuIndex = parseInt(menuDefault)
         if (defaultMenuIndex >= 0) {
           console.log('加载默认左侧菜单：VUE_APP_D2P_MENU_DEFAULT=', defaultMenuIndex)
           commit('d2admin/menu/asideSet', menuHeader[defaultMenuIndex].children, { root: true })
