@@ -14,7 +14,7 @@ import { frameInRoutes } from '@/router/routes'
 
 // d2-crud-plus 安装与初始化
 import './install'
-
+import './business/modules/permission'
 // 核心插件
 Vue.use(d2Admin)
 
