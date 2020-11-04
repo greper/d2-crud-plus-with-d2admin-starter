@@ -12,6 +12,9 @@ import router from './router'
 import { menuHeader, menuAside } from '@/menu'
 import { frameInRoutes } from '@/router/routes'
 
+// d2-crud-plus 安装与初始化
+import './install'
+
 // 核心插件
 Vue.use(d2Admin)
 
@@ -39,5 +42,19 @@ new Vue({
     this.$store.commit('d2admin/ua/get')
     // 初始化全屏监听
     this.$store.dispatch('d2admin/fullscreen/listen')
+  },
+  watch: {
+    // 检测路由变化切换侧边栏内容
+    '$route.matched': {
+      handler (matched) {
+        if (matched.length > 0) {
+          const _side = menuHeader.filter(menu => menu.path === matched[0].path)
+          if (_side.length > 0) {
+            this.$store.commit('d2admin/menu/asideSet', _side[0].children)
+          }
+        }
+      },
+      immediate: true
+    }
   }
 }).$mount('#app')
