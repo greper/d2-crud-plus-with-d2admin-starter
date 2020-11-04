@@ -1,6 +1,6 @@
 {
-  "name": "d2-crud-plus-with-d2admin-starter",
-  "version": "2.13.1",
+  "name": "d2admin-with-d2-crud-plus-starter",
+  "version": "1.14.0-2.13.1",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "start": "npm run serve",
