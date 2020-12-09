@@ -41,7 +41,7 @@ module.exports = {
     disableHostCheck: process.env.NODE_ENV === 'development', // 关闭 host check，方便使用 ngrok 之类的内网转发工具
     proxy: {
       '/api': {
-        target: 'http://localhost:7001',
+        target: 'http://localhost:7070',
         // target: 'http://preview.d2-crud-plus.docmirror.cn/D2CrudPlusExample',
         ws: true
       }
